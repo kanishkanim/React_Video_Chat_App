@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 
 import { Button, TextField, Grid, Typography, Container, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-// import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Assignment, PhoneDisabled } from '@material-ui/icons';
 
 import { SocketContext } from './SocketContext';
@@ -53,11 +53,11 @@ const Options = ( { children } ) => {
                             <Typography gutterBottom variant = "h6">Account Info</Typography>
                             <TextField label = "Name" value = {name} onChange = {(e) => setName(e.target.value)} fullWidth = "true" />
 //                             {console.log(me)}
-//                             <CopyToClipboard text = {me} className = {classes.margin}>
-//                                 <Button variant = "contained" color = "primary" fullwidth = "true" startIcon = {<Assignment fontSize = "large"/> }>
-//                                     Copy Your ID
-//                                 </Button>
-//                             </CopyToClipboard>
+                            <CopyToClipboard text = {me} className = {classes.margin}>
+                                <Button variant = "contained" color = "primary" fullwidth = "true" startIcon = {<Assignment fontSize = "large"/> }>
+                                    Copy Your ID
+                                </Button>
+                            </CopyToClipboard>
                         </Grid>
                         <Grid item xs = {12} md = {6} className = {classes.padding}>
                             <Typography gutterBottom variant = "h6">Make a Call</Typography>
