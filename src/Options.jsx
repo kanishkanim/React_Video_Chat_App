@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Options = ( { children } ) => {
     
-    const { callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(SocketContext);
+    const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(SocketContext);
     const [idToCall, setIdToCall] = useState('');
     const classes = useStyles();
 
@@ -53,8 +53,8 @@ const Options = ( { children } ) => {
                             <Typography gutterBottom variant = "h6">Account Info</Typography>
                             <TextField label = "Name" value = {name} onChange = {(e) => setName(e.target.value)} fullWidth = "true" />
 //                             {console.log(me)}
-                            <CopyToClipboard text = {me} className = {classes.margin}>
-                                <Button variant = "contained" color = "primary" fullwidth = "true" startIcon = {<Assignment fontSize = "large"/> }>
+                            <CopyToClipboard text = {me} style = {{ marginBottom: "Zrem" }}>
+                                <Button variant = "contained" color = "primary" startIcon = {<AssignmentIcon fontSize = "large"/> }>
                                     Copy Your ID
                                 </Button>
                             </CopyToClipboard>
